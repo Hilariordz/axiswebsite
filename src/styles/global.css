@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0A6AE8;
+}
+
+body {
+  font-family: "ofelia-text", sans-serif;
+  background-color: #ffffff;
+  color: #111827;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "helvetica-neue-lt-pro-cond", sans-serif;
+  font-weight: 700;
+}

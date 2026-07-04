@@ -1,0 +1,164 @@
+---
+interface Props {
+  steps?: string[];
+}
+
+const {
+  steps = [
+    "Traffic",
+    "Meta Ads",
+    "Landing Page",
+    "Lead Qualification",
+    "Sales Call",
+    "Customer",
+  ],
+} = Astro.props;
+
+const icons = [
+  "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9",
+  "M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z",
+  "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+  "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+  "M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z",
+  "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z",
+];
+---
+
+<section class="bg-white text-zinc-900 py-20 px-6 overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center max-w-xl mx-auto mb-20">
+      <span class="text-xs font-extrabold tracking-[0.25em] text-[#0A6AE8] uppercase block mb-3">
+        Workflow
+      </span>
+      <h3 class="text-4xl md:text-5xl font-bold tracking-tighter text-zinc-950 leading-[1.1]">
+        How the service works
+      </h3>
+      <p class="text-zinc-500 text-sm mt-3">
+        A seamless, end-to-end acquisition pipeline optimized for predictable conversion.
+      </p>
+    </div>
+
+    <div class="relative">
+      <div class="hidden lg:block absolute top-[48px] left-12 right-12 h-[3px] bg-zinc-100 z-0 overflow-hidden rounded-full">
+        <div class="h-full bg-gradient-to-r from-transparent via-[#0A6AE8] to-transparent animate-loading-bar w-1/3 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-6 relative z-10">
+        {
+          steps.map((step, i) => (
+            <div
+              class="flex flex-col items-center text-center w-full step-card"
+              style={`--delay: ${i * 0.4}s`}
+            >
+              <div class="relative mb-5 flex items-center justify-center w-full">
+                <div class="w-24 h-24 flex items-center justify-center rounded-2xl bg-[#f9f9f9] border border-zinc-200/80 shadow-sm p-5 relative animate-pulse-sequence">
+                  
+                  <span class="absolute -top-2 -right-2 text-[10px] font-mono font-bold bg-white text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full step-number">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-8 h-8 text-zinc-400 step-icon"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d={icons[i] || "M13 10V3L4 14h7v7l9-11h-7z"}
+                    />
+                  </svg>
+                </div>
+
+                {i < steps.length - 1 && (
+                  <div class="lg:hidden absolute -bottom-8 left-1/2 -translate-x-1/2 text-zinc-300">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5 animate-bounce"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                      />
+                    </svg>
+                  </div>
+                )}
+              </div>
+
+              <div class="mt-2 px-1 text-center">
+                <h4 class="font-bold text-lg md:text-xl text-zinc-900 tracking-tight leading-snug step-title">
+                  {step}
+                </h4>
+                <p class="text-zinc-500 text-xs md:text-sm leading-relaxed mt-2 max-w-[170px] mx-auto">
+                  Phase {i + 1} of infrastructure scaling.
+                </p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes loading-bar {
+    0% { transform: translateX(-150%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(250%); }
+  }
+  .animate-loading-bar {
+    animation: loading-bar 4s infinite linear;
+  }
+
+  @keyframes pulse-sequence {
+    0%, 100% {
+      background-color: #f9f9f9;
+      border-color: #e4e4e7;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+    15% {
+      background-color: #ffffff;
+      border-color: rgba(10, 106, 232, 0.4);
+      box-shadow: 0 10px 25px rgba(10, 106, 232, 0.08);
+    }
+    30% {
+      background-color: #f9f9f9;
+      border-color: #e4e4e7;
+    }
+  }
+
+  @keyframes text-glow {
+    0%, 100% { color: #a1a1aa; }
+    15% { color: #0a6ae8; }
+    30% { color: #a1a1aa; }
+  }
+
+  @keyframes title-glow {
+    0%, 100% { color: #18181b; }
+    15% { color: #0a6ae8; }
+    30% { color: #18181b; }
+  }
+
+  .animate-pulse-sequence {
+    animation: pulse-sequence 4s infinite ease-in-out;
+    animation-delay: var(--delay);
+  }
+  .step-icon,
+  .step-number {
+    animation: text-glow 4s infinite ease-in-out;
+    animation-delay: var(--delay);
+  }
+  .step-title {
+    animation: title-glow 4s infinite ease-in-out;
+    animation-delay: var(--delay);
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+const logos = [
+  { src: "/images/capitaldent.png", alt: "Capital Dent" },
+  { src: "/images/clp.png", alt: "CLP" },
+  { src: "/images/consultorio.png", alt: "Consultorio" },
+  { src: "/images/guad-on-whells.png", alt: "Guad on Wheels" },
+  { src: "/images/guadalajara.png", alt: "Guadalajara" },
+  { src: "/images/icom.png", alt: "ICOM" },
+  { src: "/images/ito´s.png", alt: "Ito's" },
+  { src: "/images/lowa.png", alt: "Lowa" },
+  { src: "/images/martinez.png", alt: "Martinez" },
+  { src: "/images/sicomoro.png", alt: "Sicomoro" },
+  { src: "/images/sipe.png", alt: "Sipe" },
+];
+---
+
+<section class="w-full bg-[#f8f9fa] py-20 px-6 md:px-12 lg:px-24 font-sans">
+  <div class="max-w-7xl mx-auto flex flex-col gap-12">
+    
+    <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6">
+      <div class="space-y-2 max-w-2xl">
+        <span class="text-xs font-bold tracking-widest text-[#1e56a0] uppercase block mb-1">
+          Trusted By
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-[#111] tracking-tight leading-[1.1]">
+          Businesses that <span class="text-[#2563eb]">trust systems over guesswork.</span>
+        </h2>
+        <p class="text-sm md:text-base text-gray-500 font-medium max-w-md pt-2">
+          Trusted by businesses looking for measurable and sustainable growth.
+        </p>
+      </div>
+      
+      <!-- <div class="flex-shrink-0 md:mb-2">
+        <a 
+          href="/case-studies" 
+          class="inline-flex items-center gap-3 px-8 py-4 border border-gray-300 rounded-xl text-sm font-extrabold text-gray-900 bg-white hover:bg-gray-50 transition-all duration-200 shadow-sm"
+        >
+          See Case Studies
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>-->
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+      {
+        logos.map((logo) => (
+          <div class="bg-white rounded-xl p-2 flex items-center justify-center min-h-[130px] md:min-h-[145px] shadow-[0_4px_25px_rgba(0,0,0,0.02)] border border-gray-100/70">
+            <img 
+              src={logo.src} 
+              alt={logo.alt} 
+              class="max-h-28 w-auto max-w-[96%] object-contain" 
+              loading="lazy"
+            />
+          </div>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

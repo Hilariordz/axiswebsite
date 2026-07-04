@@ -1,0 +1,504 @@
+---
+// src/pages/privacy.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const sections = [
+  {
+    title: '1. Introduction',
+    body: [
+      `Axis Marketing Agency, LLC, an Iowa limited liability company ("the Company", "we", "us", or "our"), provides performance marketing and customer acquisition services to businesses located within the United States and selected international jurisdictions. This Privacy Policy ("Policy") explains how the Company collects, uses, discloses, retains, and protects information relating to visitors of our website located at axismkt.com (the "Site"), prospective clients, current clients, and other individuals who interact with our advertising campaigns, marketing materials, forms, scheduling tools, and related digital properties (collectively, the "Services").`,
+      `We understand that individuals and businesses interacting with us entrust us with sensitive commercial and personal information in the course of building customer acquisition systems, executing ad campaigns, and analyzing marketing performance. This Policy is intended to provide a clear, comprehensive, and good-faith overview of our data practices so that you can make informed decisions regarding your relationship with us.`,
+      `By accessing or using the Site, submitting information through any of our forms, booking a consultation, or otherwise interacting with our Services, you acknowledge that you have read and understood this Policy. If you do not agree with the practices described herein, you must cease using the Site and refrain from submitting personal information to us.`,
+    ],
+  },
+  {
+    title: '2. Scope',
+    body: [
+      `This Policy applies to information collected by the Company through the Site, client intake and onboarding processes, advertising accounts and platforms managed by us on behalf of clients, email and SMS communications, scheduling tools such as Calendly, and any other channel through which the Company collects information related to the Services.`,
+      `This Policy does not apply to the practices of companies that the Company does not own, control, or manage, including third-party advertising platforms (such as Meta Platforms, Inc. and Google LLC), payment processors, or any third-party websites linked to or from the Site. These third parties maintain their own privacy policies, and we encourage you to review them independently.`,
+      `This Policy applies regardless of the device or platform used to access the Site or Services, including desktop computers, mobile devices, and tablets, and regardless of whether you access the Site directly or arrive via a paid advertisement, organic search result, referral link, or social network.`,
+    ],
+  },
+  {
+    title: '3. Definitions',
+    body: [
+      `"Personal Information" means information that identifies, relates to, describes, is reasonably capable of being associated with, or could reasonably be linked, directly or indirectly, with a particular individual or household.`,
+      `"Client" means any business or individual that has entered into a service agreement with the Company for the provision of marketing, advertising, or consulting services.`,
+      `"Site Visitor" means any individual who accesses or interacts with the Site, regardless of whether that individual becomes a Client.`,
+      `"Advertising Platforms" means third-party advertising and analytics platforms utilized by the Company in the course of providing the Services, including without limitation Meta Platforms, Inc. (Facebook and Instagram), Google LLC (Google Ads, Google Analytics, Google Tag Manager, and YouTube), and any successor or additional platforms adopted by the Company in the future.`,
+      `"Service Providers" means third-party vendors, contractors, and subcontractors engaged by the Company to support the operation of the Services, including hosting providers, customer relationship management ("CRM") platforms, email service providers, payment processors, and scheduling tools.`,
+      `"Cookies" means small text files or similar tracking technologies placed on a device when a Site Visitor interacts with the Site or with advertising served by or on behalf of the Company.`,
+      `"Processing" means any operation performed on Personal Information, including collection, recording, organization, storage, use, disclosure, transfer, or deletion.`,
+    ],
+  },
+  {
+    title: '4. Information We Collect',
+    body: [
+      `The Company collects information through direct submission, automated technologies, and certain third parties involved in the delivery of the Services.`,
+    ],
+    subsections: [
+      {
+        title: '4.1 Information You Provide Directly',
+        body: [
+          `We collect information that you voluntarily submit, including through the Site's contact form, lead generation forms, quote requests, newsletter subscription forms, scheduling tools, downloadable content, and any correspondence sent to us via email, telephone, or third-party messaging services. This may include: full name, email address, phone number, company name, job title or role, business website, approximate or declared advertising budget, information about your business or industry, the content of any message or request submitted via form, billing and account information during onboarding or invoicing, payment details processed by our third-party processors (Section 9.2), and any information you voluntarily provide during a discovery call, strategy session, or ongoing account management.`,
+        ],
+      },
+      {
+        title: '4.2 Automatically Collected Information',
+        body: [
+          `When you visit or interact with the Site, certain information is automatically collected through your browser, device, and our tracking technologies, including: IP address, browser type and version, operating system and device type, device identifiers, referring and exit pages, pages viewed and order of viewing, time spent on pages and interaction patterns, date and time of visit, approximate geographic location derived from the IP address, and ad attribution data.`,
+          `This information is collected using cookies, pixels, tags, and similar technologies described in Section 5, and is generally not sufficient on its own to identify you as a specific individual, though it may be combined with other information you provide to us.`,
+        ],
+      },
+      {
+        title: '4.3 Information Collected in the Provision of Services',
+        body: [
+          `In the course of providing Services, the Company may also collect or have access to CRM data, communication logs between the Client and their own customers when the Client has connected such systems to the Services, performance and analytics data generated by ad campaigns, and records of support requests and account communications.`,
+          `When the Company receives data belonging to the Client's own customers or leads (for example, through CRM integrations or access to ad accounts), the Company processes that data solely as a service provider acting on behalf of the Client and in accordance with the terms of the applicable service agreement.`,
+        ],
+      },
+      {
+        title: '4.4 Notice of Collection Summary',
+        body: [
+          `For the purposes of applicable state privacy law, including the CCPA, we summarize below the categories of Personal Information collected by the Company in the preceding twelve (12) months, the purposes of such collection, and whether such information may be disclosed to third parties for cross-context behavioral advertising:`,
+          `Identifiers (name, email, phone, IP, online identifiers) — collected to respond to inquiries, deliver Services, and operate the Site; may be disclosed to Advertising Platforms and Service Providers.`,
+          `Commercial information (advertising budget, business info, billing records) — collected to evaluate prospective business relationships and manage Client accounts; may be disclosed to payment processors and professional advisors.`,
+          `Internet or electronic network activity information (browsing behavior, cookie data, ad attribution) — collected to operate the Site and measure ad performance; disclosed to Advertising Platforms and analytics providers.`,
+          `Geolocation data (approximate, derived from IP) — collected for analytics and fraud prevention purposes; may be disclosed to analytics providers.`,
+          `Professional or employment-related information (job title, employer) — collected to evaluate and address business inquiries; generally not disclosed outside of Service Providers.`,
+          `The Company does not knowingly collect "sensitive personal information" as defined by the CCPA, such as government identification numbers, precise geolocation, or health information, through the Site. If such information is inadvertently submitted in a free-text form field, we will use it solely to the extent necessary to fulfill your request and will not use it for inference purposes.`,
+        ],
+      },
+      {
+        title: '4.5 Effect of Failure to Provide Information',
+        body: [
+          `Certain fields in our forms are mandatory to allow us to respond to your inquiry, book a consultation, or provide the Services, such as your name, email address, and a general description of your business. If you choose not to provide such mandatory information, we may be unable to respond to your request or provide the Services. Optional fields, such as advertising budget, are used to better tailor our response and are not required to submit a general inquiry.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '5. Cookies and Tracking Technologies',
+    body: [
+      `The Company and its Service Providers use cookies and similar tracking technologies to operate the Site, measure the effectiveness of advertising campaigns, and improve the Services.`,
+    ],
+    subsections: [
+      {
+        title: '5.1 Types of Cookies Used',
+        body: [
+          `Session cookies — temporary cookies that are deleted when you close your browser and serve the basic functionality of the Site.`,
+          `Persistent cookies — cookies that remain on your device for a set period and allow the Site to remember your preferences or recognize you on subsequent visits.`,
+          `Functional cookies — cookies that enable enhanced functionality, such as remembering form data or scheduling preferences.`,
+          `Performance and analytics cookies — cookies that collect information about how visitors use the Site, including through Google Analytics 4, to help us understand and improve Site performance.`,
+          `Advertising cookies — cookies placed by Advertising Platforms, including the Meta Pixel and Google Ads tracking tags, used to measure campaign effectiveness and deliver remarketing ads.`,
+          `You can control or disable cookies through your browser settings. Please note that disabling cookies may affect the functionality of the Site and prevent certain features, such as scheduling tools or personalized content, from operating correctly.`,
+        ],
+      },
+      {
+        title: '5.2 Meta Pixel and Meta Conversions API',
+        body: [
+          `The Company uses the Meta Pixel and Meta Conversions API, technologies provided by Meta Platforms, Inc., on the Site and within ad campaigns managed for Clients. The Meta Pixel places a cookie on your browser and collects information about your interactions with the Site, including page views, clicks, and form submissions, to measure ad performance, build remarketing audiences, and optimize ad delivery. The Meta Conversions API allows sharing certain website and server event data directly with Meta to improve conversion measurement accuracy, even when browser cookies are limited or blocked.`,
+          `Information shared with Meta may include the automatically collected information described in Section 4.2, as well as hashed (encrypted) versions of information you submit in forms, such as your email or phone number, used to match conversion events without revealing the underlying information in readable form. Meta's use of this information is governed by its own data policies.`,
+        ],
+      },
+      {
+        title: '5.3 Google Analytics 4',
+        body: [
+          `The Company uses Google Analytics 4, a web analytics service from Google LLC, to understand how visitors interact with the Site. Google Analytics 4 uses cookies and similar technologies to collect information such as pages visited, time on page, device and browser type, and general geographic location. This information is used in aggregate and pseudonymized form to evaluate Site performance and user experience.`,
+        ],
+      },
+      {
+        title: '5.4 Google Ads Conversion Tracking',
+        body: [
+          `The Company uses Google Ads conversion tracking to measure the performance of search, display, and video campaigns managed for our Clients. Conversion tags placed via Google Tag Manager record when a Site Visitor completes an action following exposure to or interaction with an ad, such as submitting a form, calling a number, or booking a consultation.`,
+        ],
+      },
+      {
+        title: '5.5 Remarketing',
+        body: [
+          `The Company uses remarketing technologies offered by Meta, Google, and other Advertising Platforms to display ads to individuals who have previously visited the Site or interacted with our content. You can opt out of interest-based remarketing advertising through the Digital Advertising Alliance opt-out tool, your Google Ads settings, Meta ad preferences, or your device's advertising identifier settings.`,
+        ],
+      },
+      {
+        title: '5.6 Google Tag Manager',
+        body: [
+          `Google Tag Manager is used to deploy and manage the various tracking tags, pixels, and scripts described in this Section. Google Tag Manager itself does not collect Personal Information; rather, it functions as a delivery mechanism for the tracking technologies described above.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '6. Marketing Communications',
+    subsections: [
+      {
+        title: '6.1 Email Communications',
+        body: [
+          `If you submit your email address through the Site or otherwise provide it to us, we may use it to send you marketing communications, newsletters, educational content, service updates, and promotional offers, in addition to transactional and account-related communications. All marketing emails sent by the Company comply with the CAN-SPAM Act of 2003 and include a clear mechanism to unsubscribe. You can opt out of receiving marketing emails at any time via the unsubscribe link included in every email or by contacting us using the information in Section 21.`,
+          `Please note that even if you cancel marketing emails, we may continue to send you transactional or administrative communications relevant to an existing service relationship, such as invoices, account notices, and responses to support requests, as permitted by applicable law.`,
+        ],
+      },
+      {
+        title: '6.2 SMS Communications',
+        body: [
+          `The Company may, in the future, offer the option to receive text messages ("SMS") related to scheduling, account updates, or marketing. When SMS communications are offered, participation will require your prior express opt-in consent, and you will be informed at the time of consent regarding message frequency, potential message and data rates, and instructions to cancel (such as replying "STOP"). You can withdraw your consent at any time, and we will honor such requests in accordance with applicable law, including the Telephone Consumer Protection Act.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '7. How We Use Information',
+    body: [
+      `The Company uses the information described in Section 4 for the following commercial purposes: responding to inquiries submitted via forms; scheduling and conducting discovery calls, strategy sessions, and consultations; evaluating the fit of prospective Clients and preparing proposals or service agreements; onboarding Clients and delivering the Services; managing, optimizing, and reporting on advertising campaigns on behalf of Clients; operating, maintaining, and improving the functionality, security, and performance of the Site; sending marketing communications subject to your preferences and opt-out rights; analyzing aggregate Site usage trends and advertising performance; processing payments, issuing invoices, and maintaining financial records; complying with legal obligations and responding to requests from authorities; detecting and investigating fraudulent or unauthorized activity; and maintaining internal business records.`,
+      `We do not use Personal Information for any purpose materially incompatible with the purposes disclosed in this Policy without providing corresponding notice or obtaining consent where required by applicable law.`,
+    ],
+  },
+  {
+    title: '8. Legal Basis for Processing',
+    body: [
+      `The Company is based in the United States and this Policy is drafted primarily under U.S. federal law and Iowa state law. Where the Company processes Personal Information of individuals located in jurisdictions that require identifying a legal basis for processing, such as the European Union or the United Kingdom under the General Data Protection Regulation ("GDPR"), the Company processes such information based on: (a) your consent; (b) the performance of a contract; (c) our legitimate business interests; and (d) compliance with a legal obligation.`,
+      `This Section is included to prepare the Company's data practices for international clients and does not constitute a representation that the GDPR or other similar foreign regimes apply to the Company's processing activities under all circumstances.`,
+    ],
+  },
+  {
+    title: '9. How We Share Information',
+    body: [
+      `The Company does not sell Personal Information to third parties for monetary consideration in the ordinary course of business. However, we share information with certain categories of third parties as described below, which may constitute a "sale" or "sharing" under certain state privacy laws due to the use of advertising cookies, as addressed in Section 13.`,
+    ],
+    subsections: [
+      {
+        title: '9.1 Third-Party Service Providers',
+        body: [
+          `We share information with Service Providers that perform functions on our behalf, including hosting providers, email marketing platforms, CRM software, scheduling tools like Calendly, analytics providers, and IT support vendors. These Service Providers are contractually obligated to use the information solely to provide their services to us.`,
+        ],
+      },
+      {
+        title: '9.2 Payment Processors',
+        body: [
+          `Billing and payment information is collected and processed by third-party payment processors, which may include Stripe, PayPal, and Venmo, as well as financial institutions involved in wire transfers. The Company does not store full payment card numbers on its own systems.`,
+        ],
+      },
+      {
+        title: '9.3 Advertising Platforms',
+        body: [
+          `As described in Section 5, we share certain automatically collected information and, in some cases, encrypted identifier information, with Advertising Platforms like Meta and Google, for the purpose of measuring and optimizing ad campaigns.`,
+        ],
+      },
+      {
+        title: '9.4 Professional Advisors and Legal Compliance',
+        body: [
+          `We may disclose information to attorneys, accountants, auditors, and other professional advisors as reasonably necessary, and to governmental authorities when disclosure is required by law, necessary to comply with a subpoena or other legal process, or necessary to protect the rights, property, or safety of the Company, our Clients, or others.`,
+        ],
+      },
+      {
+        title: '9.5 Business Transfers',
+        body: [
+          `If the Company is involved in a merger, acquisition, financing, reorganization, bankruptcy, or sale of all or part of its business or assets, Personal Information may be disclosed or transferred to the parties involved in such transaction, subject to standard confidentiality agreements.`,
+        ],
+      },
+      {
+        title: '9.6 Aggregated and De-identified Data',
+        body: [
+          `The Company reserves the right to use, publish, and share aggregated or anonymized data that does not identify any individual in particular, including for internal analysis, benchmarks, case studies, and promotional materials describing general results and trends achieved for its Clients.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '10. International Data Transfers',
+    body: [
+      `The Company is headquartered in the State of Iowa, United States, and the information we collect is primarily processed and stored on servers located in the United States or through Service Providers that may process data in the United States or other jurisdictions in which they operate. If you access the Site or Services from outside the United States, including from Canada, Mexico, the European Union, the United Kingdom, or other parts of Latin America, you understand and acknowledge that your information will be transferred to, stored, and processed in the United States, a jurisdiction whose data protection laws may differ from, and be less protective than, the laws of your home jurisdiction.`,
+      `Where required by applicable law, the Company will implement appropriate safeguards for such international transfers. By submitting information to us from outside the United States, you consent to this transfer, storage, and processing to the extent permitted by applicable law.`,
+    ],
+  },
+  {
+    title: '11. Data Security',
+    body: [
+      `The Company implements administrative, technical, and physical safeguards designed to protect Personal Information against unauthorized access, disclosure, alteration, or destruction, including data encryption in transit, restricted system access, the use of reputable hosting infrastructure, and internal sensitive information handling policies.`,
+      `No method of transmission over the internet or electronic storage is completely secure, and the Company cannot guarantee absolute data security. In the event of a data breach that triggers notification obligations under applicable law, the Company will notify affected individuals and the corresponding authorities within the required timeframes and procedures, including Iowa's data breach notification requirements.`,
+    ],
+  },
+  {
+    title: '12. Data Retention',
+    body: [
+      `The Company retains Personal Information for as long as reasonably necessary to fulfill the purposes described in this Policy, including the duration of any active relationship with a Client, and subsequently for the additional period necessary to comply with legal, tax, or accounting obligations, resolve disputes, enforce our agreements, and maintain appropriate business records.`,
+      `Information collected via marketing forms from individuals who do not become Clients is generally retained for a reasonable period to allow for follow-up communications, after which it may be deleted or de-identified if no further interaction occurs, subject to your right to request early deletion under Section 14.`,
+    ],
+  },
+  {
+    title: '13. Your Privacy Rights and Choices',
+    subsections: [
+      {
+        title: '13.1 California Privacy Rights (CCPA/CPRA)',
+        body: [
+          `If you are a California resident, the California Consumer Privacy Act, as amended by the California Privacy Rights Act (collectively, the "CCPA"), grants you certain rights regarding your Personal Information, including: knowing the categories and specific pieces of data we have collected; requesting the deletion of your information; correcting inaccurate information; opting out of the "sale" or "sharing" of your information, including with Advertising Platforms; limiting the use of sensitive personal information; and not receiving discriminatory treatment for exercising these rights.`,
+          `To exercise any of these rights, please submit a request using the contact information in Section 21. We will verify your identity before processing your request to the extent required by law, and respond within the timeframes established by the CCPA.`,
+        ],
+      },
+      {
+        title: '13.2 Do Not Sell or Share My Personal Information',
+        body: [
+          `The use of advertising cookies and pixels described in Section 5, including the Meta Pixel and Google Ads tracking, may be considered a "sale" or "sharing" of Personal Information under the CCPA. You can opt out of this sharing by adjusting your cookie preferences through the Site's cookie management tool, if available, via your browser's privacy settings, or by contacting us directly. We do not knowingly sell or share Personal Information of individuals we know to be under sixteen (16) years of age.`,
+        ],
+      },
+      {
+        title: '13.3 Other U.S. State Privacy Rights',
+        body: [
+          `Residents of certain other U.S. states with comprehensive consumer privacy laws may have similar rights to those described above, including rights to access, correct, delete, and port data, and to opt out of targeted advertising, sales of personal information, and certain forms of profiling. The Company will honor valid requests from residents of such states to the extent required by applicable state law.`,
+        ],
+      },
+      {
+        title: '13.4 International Users',
+        body: [
+          `If you are located in the European Economic Area, the United Kingdom, or another jurisdiction that recognizes data subject rights under a framework such as the GDPR, you may have additional rights, including accessing, rectifying, or erasing your Personal Information, restricting or objecting to certain processing, receiving your data in a portable format, and lodging a complaint with a supervisory authority.`,
+        ],
+      },
+      {
+        title: '13.5 "Do Not Track" Signals',
+        body: [
+          `Some web browsers offer a "Do Not Track" signal that communicates a preference not to be tracked across websites. Currently, no uniform industry standard exists for recognizing or honoring such signals, and the Site does not currently respond to them differently than the cookie and opt-out options described elsewhere in this Policy.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '14. Data Deletion Requests and Exercising Rights',
+    body: [
+      `To request access, correction, or deletion of your Personal Information, or to exercise any other right described in Section 13, please contact us using the information in Section 21. Please include sufficient detail in your request to allow us to identify the information in question, such as the email address or phone number you previously provided.`,
+      `We may need to verify your identity before completing certain requests. We will make commercially reasonable efforts to respond to verified requests within the timeframe required by applicable law. Certain information may be exempt from deletion when retention is necessary to comply with a legal obligation, complete a transaction, detect security incidents, or exercise or defend legal claims.`,
+    ],
+  },
+  {
+    title: '15. Children\'s Privacy',
+    body: [
+      `The Site and Services are directed at businesses and business professionals, and are not intended for use by, or directed to, children under thirteen (13) years of age. The Company does not knowingly collect Personal Information from children under thirteen (13) years of age in a manner inconsistent with the Children's Online Privacy Protection Act ("COPPA"). If we become aware that we have inadvertently collected Personal Information from a child under thirteen (13) without appropriate parental consent, we will take reasonable steps to delete such information promptly.`,
+    ],
+  },
+  {
+    title: '16. Third-Party Websites and Links',
+    body: [
+      `The Site may contain links to third-party websites, tools, and platforms, including social networks, scheduling tools, and resources referenced in blog posts or case studies. This Policy does not apply to those third-party sites, and the Company is not responsible for their privacy practices or content. We recommend reviewing the privacy policy of any third-party site before providing information to them.`,
+    ],
+  },
+  {
+    title: '17. Portfolio, Case Studies, and Aggregated Performance Data',
+    body: [
+      `In the course of business, the Company may display completed work, campaign results, and general performance metrics achieved for Clients in its portfolio, case studies, and marketing materials. The Company will not disclose confidential business information of a Client, proprietary strategy details, or non-public financial data in such materials without the Client's consent, and will honor written confidentiality agreements restricting such disclosures.`,
+      `The Company further reserves the right to use anonymized and aggregated performance data derived from Client campaigns for internal analysis, benchmarks, and improvement of its own services and methodologies, without identifying any particular Client or individual.`,
+    ],
+  },
+  {
+    title: '18. Changes to this Privacy Policy',
+    body: [
+      `The Company may update this Policy periodically to reflect changes in our practices, the Services we offer, or applicable law. The "Effective Date" at the top of this Policy indicates when it was last revised. Material changes will be indicated by updating the Effective Date and, where required by law, we will provide additional notice, such as posting a notice on the Site or sending an email to registered Clients. Your continued use of the Site or Services following the publication of an updated Policy constitutes your acknowledgement of the revised terms.`,
+    ],
+  },
+  {
+    title: '19. Automated Decision-Making and Ad Optimization',
+    body: [
+      `Certain Advertising Platforms used by the Company, including Meta and Google, employ automated systems, machine learning models, and algorithmic bidding tools to determine which individuals are shown certain ads and at what price those ads are purchased on behalf of our Clients. These automated processes are operated and controlled by the applicable Advertising Platform, not by the Company. The Company itself does not utilize fully automated decision-making that produces legal or similarly significant effects, such as automated determinations regarding creditworthiness, employment, or eligibility for services.`,
+    ],
+  },
+  {
+    title: '20. Accessibility',
+    body: [
+      `The Company is committed to making the Site accessible to individuals with disabilities and providing this Policy in a reasonably accessible format. If you experience difficulties accessing any part of the Site or this Policy, or if you require this Policy in an alternative format, please contact us using the information in Section 21, and we will make reasonable efforts to accommodate your request.`,
+    ],
+  },
+  {
+    title: '21. Contact Information',
+    body: [
+      `If you have questions about this Policy, wish to exercise any of the rights described herein, or would like to file a complaint about our data practices, please contact us using the following information:`,
+    ],
+    contact: {
+      lines: [
+        'Axis Marketing Agency, LLC',
+        'Attn: Privacy Inquiries',
+        'Email: direccion@axismkt.com',
+      ],
+    },
+  },
+];
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+---
+
+<Layout>
+  <Navbar />
+  
+  <div class="legal-page">
+    <div class="legal-container">
+      <header class="legal-header">
+        <p class="legal-eyebrow">Legal Document</p>
+        <h1 class="legal-title">Privacy Policy</h1>
+        <p class="legal-subtitle">
+          Axis Marketing Agency, LLC — Effective Date: June 30, 2026
+        </p>
+      </header>
+
+      <nav class="legal-toc" aria-label="Table of contents">
+        <p class="legal-toc-title">Contents</p>
+        <ol class="legal-toc-list">
+          {sections.map((s) => (
+            <li class="legal-toc-item">
+              <a href={`#${slugify(s.title)}`} class="legal-toc-link">
+                {s.title}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <article>
+        {sections.map((section) => (
+          <section id={slugify(section.title)} class="legal-section">
+            <h2 class="legal-section-title">{section.title}</h2>
+            
+            {section.body && section.body.map((text) => (
+              <p class="legal-paragraph">{text}</p>
+            ))}
+
+            {section.subsections && section.subsections.map((sub) => (
+              <div class="legal-subsection">
+                <h3 class="legal-subsection-title">{sub.title}</h3>
+                {sub.body.map((text) => (
+                  <p class="legal-paragraph">{text}</p>
+                ))}
+              </div>
+            ))}
+
+            {section.contact && (
+              <address class="legal-contact-block">
+                {section.contact.lines.map((line) => (
+                  <div>{line}</div>
+                ))}
+              </address>
+            )}
+          </section>
+        ))}
+      </article>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Clean Black & White Structure */
+  .legal-page {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 80px 20px 120px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .legal-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .legal-header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 20px;
+  }
+  .legal-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #666666;
+    margin: 0 0 8px;
+  }
+  .legal-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 8px;
+    font-weight: 800;
+    color: #000000;
+  }
+  .legal-subtitle {
+    font-size: 13px;
+    color: #555555;
+    margin: 0;
+  }
+  .legal-toc {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #000000;
+    background-color: #fafafa;
+  }
+  .legal-toc-title {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 0 12px;
+  }
+  .legal-toc-list {
+    columns: 2;
+    column-gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .legal-toc-item {
+    break-inside: avoid;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  .legal-toc-link {
+    color: #000000;
+    text-decoration: underline;
+  }
+  .legal-toc-link:hover {
+    text-decoration: none;
+  }
+  .legal-section {
+    margin-bottom: 40px;
+    scroll-margin-top: 40px;
+  }
+  .legal-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .legal-subsection {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 1px solid #e0e0e0;
+  }
+  .legal-subsection-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+  .legal-paragraph {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #222222;
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+  .legal-contact-block {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000000;
+    margin-top: 12px;
+    font-weight: 500;
+  }
+</style>

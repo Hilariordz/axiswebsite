@@ -1,0 +1,621 @@
+---
+// src/pages/terms.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const sections = [
+  {
+    title: '1. Acceptance of Terms',
+    body: [
+      `These Terms of Service (these "Terms") constitute a legally binding agreement between Axis Marketing Agency, LLC, an Iowa limited liability company ("the Company," "we," "us," or "our"), and the individual or business entity accessing the Site or engaging the Company’s Services (the "Client," "you," or "your"). These Terms govern your access to and use of the website located at axismkt.com (the "Site") and the marketing, advertising, and consulting services described in Section 4 (the "Services").`,
+      `By accessing the Site, submitting a form, signing a proposal or service agreement referencing these Terms, or otherwise engaging the Company, you acknowledge that you have read, understood, and agree to be bound by these Terms, together with the Company’s Privacy Policy, which is incorporated herein by reference. If you do not agree to these Terms, you must not access the Site or engage the Services.`,
+      `Where the Company and a Client execute a separate written service agreement, statement of work, or proposal (a "Service Agreement") governing a specific engagement, the terms of that Service Agreement will control with respect to the matters expressly addressed therein, and these Terms will govern all matters not expressly addressed in the Service Agreement, including the general legal framework applicable to the parties’ relationship.`,
+    ],
+  },
+  {
+    title: '2. Eligibility',
+    body: [
+      `By using the Site or engaging the Services, you represent and warrant that: (a) you are at least eighteen (18) years of age; (b) you have the legal capacity and authority to enter into these Terms, whether on your own behalf or on behalf of a business entity you represent; (c) if you are entering into these Terms on behalf of a business entity, you are authorized to bind that entity; and (d) your use of the Services will comply with all applicable laws and regulations in your jurisdiction. The Services are intended for use by businesses and business professionals and are not directed to, and may not be used by, individuals under the age of eighteen (18).`,
+    ],
+  },
+  {
+    title: '3. Definitions',
+    body: [
+      `"Advertising Accounts" means accounts on Advertising Platforms, including Meta Business Manager and Google Ads accounts, used to run advertising campaigns in connection with the Services.`,
+      `"Advertising Platforms" means third-party platforms such as Meta Platforms, Inc., Google LLC, and any other platform on which the Company places or manages advertising on behalf of a Client.`,
+      `"Advertising Spend" means amounts paid directly to an Advertising Platform to purchase media, as distinguished from the Company’s management fee.`,
+      `"Agency IP" means all methodologies, frameworks, templates, software, know-how, and other intellectual property owned or developed by the Company independent of a specific Client engagement, including prior to, during, or after the term of any Service Agreement.`,
+      `"Client IP" means trademarks, logos, brand assets, copy, product information, and other intellectual property owned by the Client and provided to the Company for use in connection with the Services.`,
+      `"Creative Assets" means advertisements, landing pages, copywriting, images, video, and other content developed by or for the Company in connection with the Services.`,
+      `"Confidential Information" has the meaning set forth in Section 10.`,
+      `"Deliverables" means the specific work product identified in an applicable Service Agreement, such as advertising campaigns, landing pages, funnels, or strategic recommendations.`,
+    ],
+  },
+  {
+    title: '4. Scope of Services',
+    body: [
+      `The Company provides performance marketing and client acquisition services designed to help businesses build predictable systems for generating leads, sales, and customers. The Company does not offer generic social media content posting as a standalone service; rather, the Company’s Services are oriented around measurable client acquisition outcomes supported by advertising, conversion infrastructure, and analytics. The specific scope of Services for a given engagement will be set forth in the applicable Service Agreement or proposal, and may include any combination of the categories described below.`,
+    ],
+    subsections: [
+      {
+        title: '4.1 Advertising Services',
+        body: [
+          `The Company may provide management of paid advertising campaigns across Meta platforms (Facebook and Instagram), Google Ads (Search, Display, and YouTube), and other advertising channels as agreed, including campaign strategy, audience targeting, ad creative development, bid and budget management, remarketing campaign setup, and ongoing optimization based on performance data.`,
+        ],
+      },
+      {
+        title: '4.2 Website Development, Landing Pages, and Funnels',
+        body: [
+          `The Company may design and develop websites, landing pages, and multi-step sales funnels intended to convert advertising traffic into leads or sales. This work may include copywriting, layout design, integration of tracking technologies described in the Privacy Policy, and conversion rate optimization testing.`,
+        ],
+      },
+      {
+        title: '4.3 Marketing Strategy and Consulting Services',
+        body: [
+          `The Company may provide marketing strategy, digital consulting, and marketing audits intended to evaluate a Client’s existing customer acquisition systems and recommend improvements. Consulting Deliverables are advisory in nature, and the Client retains sole discretion and responsibility for whether and how to implement any recommendation.`,
+        ],
+      },
+      {
+        title: '4.4 Analytics, Tracking, and Reporting',
+        body: [
+          `The Company may implement and manage analytics and tracking infrastructure, including Google Tag Manager, Google Analytics 4, the Meta Pixel, and the Meta Conversion API, and may provide the Client with performance reporting and dashboards summarizing campaign activity. Reporting is based on data provided by third-party Advertising Platforms and analytics tools, and the Company does not independently verify the underlying accuracy of such third-party data.`,
+        ],
+      },
+      {
+        title: '4.5 Creative and Copywriting Services',
+        body: [
+          `The Company may provide creative strategy, copywriting, and advertising creative development services in connection with the Services. All Creative Assets are subject to the Client approval process described in Section 6 prior to being published or used in a live advertising campaign, except where the Client has expressly authorized the Company to publish Creative Assets without prior review.`,
+        ],
+      },
+      {
+        title: '4.6 Modification of Scope',
+        body: [
+          `The Company reserves the right to modify, expand, or discontinue any particular Service offering from time to time. Changes to the scope of Services for an active engagement will be documented in an amendment to the applicable Service Agreement or through written confirmation between the parties, which may occur by email.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '5. Client Responsibilities',
+    body: [
+      `The Client acknowledges that the effectiveness of the Services depends significantly on the Client’s cooperation and agrees to the following responsibilities:`,
+      `• To provide accurate, complete, and current information regarding the Client’s business, products, services, and advertising objectives`,
+      `• To timely review and approve or provide feedback on Creative Assets, landing pages, and strategic recommendations submitted by the Company`,
+      `• To maintain ownership of, and legal rights to use, all business information, trademarks, product claims, testimonials, images, and other content submitted to the Company for use in the Services`,
+      `• To ensure that all content, offers, and claims provided to the Company for use in advertising comply with applicable law, including truth-in-advertising requirements, and any industry-specific regulations applicable to the Client’s business`,
+      `• To fund Advertising Spend in a timely manner sufficient to support the advertising campaigns agreed upon with the Company`,
+      `• To maintain active and accessible Advertising Accounts, or to grant the Company appropriate access as described in Section 7`,
+      `• To respond to reasonable requests for information, access, or approval within the timeframes communicated by the Company, recognizing that delays in Client response may delay Deliverables or affect campaign performance`,
+      `• To promptly notify the Company of any changes to the Client’s business that may materially affect the Services, such as changes in product offerings, pricing, service area, or legal status`,
+      `The Client acknowledges that its failure to fulfill the responsibilities described in this Section may adversely affect the performance of the Services, and the Company will not be liable for any resulting delay, underperformance, or additional cost arising from the Client’s failure to meet these responsibilities.`,
+    ],
+  },
+  {
+    title: '6. Agency Responsibilities',
+    body: [
+      `The Company agrees to perform the Services in a professional and workmanlike manner consistent with generally accepted industry practices for performance marketing agencies. The Company will provide the Deliverables described in the applicable Service Agreement, communicate with the Client regarding campaign status and performance on a reasonable and mutually agreed basis, and use commercially reasonable efforts to implement strategies designed to support the Client’s customer acquisition objectives.`,
+      `The Company will submit Creative Assets and material campaign changes to the Client for review and approval prior to publication, except where the Client has authorized the Company, in writing, to proceed without prior approval for specified categories of changes, such as routine budget or bid adjustments made in the ordinary course of campaign optimization.`,
+      `Notwithstanding the foregoing, and as further described in Section 13.2, the Company’s obligations under this Section are obligations of effort and professional performance, not obligations to achieve any particular marketing result.`,
+    ],
+  },
+  {
+    title: '7. Access to Advertising Accounts; Ownership of Advertising Accounts',
+    body: [
+      `Unless otherwise agreed in writing, all Advertising Accounts used in connection with the Services, including Meta Business Manager assets and Google Ads accounts, are and will remain the sole property of the Client. The Company will typically be granted administrative or partner-level access to such Advertising Accounts for the purpose of performing the Services, but such access does not transfer ownership of the Advertising Account, any associated advertising history, pixel data, audience data, or account identifiers to the Company.`,
+      `Upon termination of the applicable Service Agreement, the Company will cooperate in good faith to transfer or remove its access to the Client’s Advertising Accounts within a commercially reasonable time, provided that the Client has satisfied all outstanding payment obligations owed to the Company.`,
+      `The Client is solely responsible for maintaining accurate billing information and sufficient funding directly with each Advertising Platform for all Advertising Spend, which is billed by and payable to the Advertising Platform directly or through the Company’s billing arrangement as specified in the applicable Service Agreement.`,
+      `In limited circumstances where a Client does not have an existing Advertising Account and requests that the Company create one on the Client’s behalf, the Company will use commercially reasonable efforts to establish such account in a manner that reflects Client ownership from inception, and will transfer administrative control to the Client upon request, subject to each Advertising Platform’s own account transfer procedures and policies, which are outside of the Company’s control.`,
+    ],
+  },
+  {
+    title: '8. Intellectual Property',
+    subsections: [
+      {
+        title: '8.1 Pre-Existing Intellectual Property',
+        body: [
+          `Each party retains all right, title, and interest in and to its intellectual property that existed prior to the engagement or that is developed independently of the engagement, including the Company’s Agency IP and the Client’s pre-existing Client IP. Nothing in these Terms transfers ownership of either party’s pre-existing intellectual property to the other party.`,
+        ],
+      },
+      {
+        title: '8.2 Agency Intellectual Property',
+        body: [
+          `The Company retains all right, title, and interest in the Agency IP, including its proprietary frameworks, campaign methodologies, internal tools, templates, and general know-how used in delivering the Services, whether developed before, during, or after a particular engagement. The Company grants the Client a limited, non-exclusive, non-transferable license to use the Agency IP solely to the extent embedded in the Deliverables provided to the Client, and solely for the Client’s internal business purposes during and after the term of the engagement, provided all payment obligations have been satisfied.`,
+        ],
+      },
+      {
+        title: '8.3 Client Intellectual Property',
+        body: [
+          `The Client retains all right, title, and interest in the Client IP, including its trademarks, brand assets, product information, and other materials furnished to the Company. The Client grants the Company a limited, non-exclusive, royalty-free license to use the Client IP solely as necessary to perform the Services during the term of the engagement, including incorporating such Client IP into Creative Assets, advertisements, and landing pages developed for the Client.`,
+        ],
+      },
+      {
+        title: '8.4 Ownership of Deliverables and Creative Assets',
+        body: [
+          `Except as otherwise specified in a Service Agreement, and subject to full payment of all fees owed under the applicable Service Agreement, ownership of custom Creative Assets and Deliverables created specifically for the Client (such as final website files, landing page files, and finalized ad creative) will transfer to the Client upon completion of the applicable engagement and payment in full. Notwithstanding such transfer, the Company retains the right to use and incorporate general techniques, concepts, and non-Client-identifying know-how gained in the course of creating such Deliverables in its work for other clients, and retains ownership of any underlying Agency IP incorporated into the Deliverables as described in Section 8.2.`,
+          `Where the Company utilizes third-party stock assets, licensed fonts, licensed software, or open-source components in the course of developing Deliverables, ownership of such third-party components is governed by the applicable third-party license, and the Company passes through only such rights as it has been granted under those licenses.`,
+        ],
+      },
+      {
+        title: '8.5 Portfolio and Marketing Use',
+        body: [
+          `As further described in the Company’s Privacy Policy, the Company reserves the right to display completed work, including Creative Assets and general descriptions of campaign results, in its portfolio, case studies, and marketing materials, unless the Client and the Company have entered into a written non-disclosure agreement or other written restriction expressly prohibiting such use, in which case the Company will honor that restriction.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '9. Licensing of Creative Assets During the Engagement',
+    body: [
+      `During the term of an active Service Agreement, the Client is granted a license to use all Creative Assets developed by the Company solely in connection with the advertising campaigns and Services for which they were created. Use of Creative Assets outside the scope of the applicable engagement, including use by a third party or use following termination without payment of applicable fees, is not authorized absent a separate written agreement between the parties.`,
+    ],
+  },
+  {
+    title: '10. Confidential Information and Non-Disclosure',
+    body: [
+      `"Confidential Information" means non-public information disclosed by one party (the "Disclosing Party") to the other party (the "Receiving Party") in connection with the Services, including business strategies, financial information, advertising performance data, pricing, customer information, and technical or operational information, whether disclosed orally, in writing, or through access to systems or accounts, and that a reasonable person would understand to be confidential given the nature of the information and circumstances of disclosure.`,
+      `The Receiving Party agrees to: (a) use the Disclosing Party’s Confidential Information solely in connection with the performance of, or receipt of, the Services; (b) protect such Confidential Information using at least the same degree of care it uses to protect its own confidential information of similar importance, and in no event less than a reasonable degree of care; and (c) not disclose such Confidential Information to any third party except to employees, contractors, and Service Providers with a legitimate need to know and who are bound by confidentiality obligations at least as protective as those in this Section.`,
+      `Confidential Information does not include information that: (a) is or becomes publicly available through no fault of the Receiving Party; (b) was rightfully known to the Receiving Party prior to disclosure; (c) is rightfully obtained by the Receiving Party from a third party without restriction; or (d) is independently developed by the Receiving Party without use of or reference to the Disclosing Party’s Confidential Information. A Receiving Party may disclose Confidential Information to the extent required by law, regulation, or valid legal process, provided that, where legally permissible, it gives the Disclosing Party reasonable advance notice to allow the Disclosing Party to seek a protective order.`,
+      `The obligations in this Section will survive termination of the engagement and remain in effect for a period of three (3) years thereafter, except with respect to trade secrets, which will remain protected for as long as they qualify as trade secrets under applicable law.`,
+    ],
+  },
+  {
+    title: '11. Independent Contractor Relationship',
+    body: [
+      `The Company is an independent contractor with respect to the Client, and nothing in these Terms creates a partnership, joint venture, agency (except to the limited extent necessary to manage Advertising Accounts as authorized by the Client), or employment relationship between the parties. Neither party has the authority to bind the other party or to incur obligations on the other party’s behalf, except as expressly authorized in writing. Personnel performing the Services on behalf of the Company, whether employees or subcontractors, are not employees of the Client and are not entitled to any employee benefits from the Client.`,
+    ],
+  },
+  {
+    title: '12. Payments, Fees, and Taxes',
+    subsections: [
+      {
+        title: '12.1 Fees',
+        body: [
+          `Fees for the Services will be set forth in the applicable Service Agreement or proposal and are due in accordance with the payment schedule specified therein. Unless otherwise agreed, the Company’s management fees are billed separately from, and are in addition to, any Advertising Spend, which belongs to and is funded by the Client as described in Section 13.`,
+        ],
+      },
+      {
+        title: '12.2 Accepted Payment Methods',
+        body: [
+          `The Company may accept payment via Stripe, PayPal, Venmo, wire transfer, ACH transfer, or direct invoice, as specified at the time of engagement. The Client is responsible for any transaction fees imposed by the Client’s chosen payment method or financial institution, except where the Company expressly agrees to absorb such fees.`,
+        ],
+      },
+      {
+        title: '12.3 Late Payments',
+        body: [
+          `Invoices not paid by the due date specified therein may be considered delinquent. The Company reserves the right to charge interest on overdue amounts at the lesser of one and one-half percent (1.5%) per month or the maximum rate permitted by applicable law, and to suspend performance of the Services, including pausing active advertising campaigns, until outstanding amounts are paid in full. The Client remains responsible for reasonable costs of collection, including attorneys’ fees, incurred by the Company in connection with collecting delinquent amounts, to the extent permitted by applicable law.`,
+        ],
+      },
+      {
+        title: '12.4 Taxes',
+        body: [
+          `Fees quoted by the Company do not include applicable sales, use, excise, or similar taxes unless expressly stated. The Client is responsible for all such taxes arising from the Services, other than taxes based on the Company’s net income. Each party is responsible for its own tax filings and obligations, including the Company’s obligations as an independent contractor and the Client’s obligations with respect to any applicable use tax on the Services received.`,
+        ],
+      },
+      {
+        title: '12.5 Refund Policy',
+        body: [
+          `Fees paid for Services already rendered, including strategy development, campaign setup, creative production, and completed consulting hours, are generally non-refundable, reflecting the labor and resources the Company has already expended. Refunds, if any, for undelivered future Services will be addressed on a case-by-case basis as set forth in the applicable Service Agreement. Advertising Spend that has already been transmitted to an Advertising Platform is subject to that platform’s own refund and billing policies and is not refundable by the Company.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '13. Advertising Spend and Performance Disclaimers',
+    subsections: [
+      {
+        title: '13.1 Advertising Spend Belongs to the Client',
+        body: [
+          `All Advertising Spend used to purchase media on Advertising Platforms belongs to, and is the financial responsibility of, the Client. The Company’s management fee is separate and distinct from Advertising Spend, and payment of a management fee to the Company does not include or cover the cost of Advertising Spend unless expressly stated in the applicable Service Agreement. The Company does not guarantee any minimum return on Advertising Spend.`,
+        ],
+      },
+      {
+        title: '13.2 No Guarantee of Results',
+        body: [
+          `THE CLIENT ACKNOWLEDGES AND AGREES THAT THE COMPANY DOES NOT GUARANTEE ANY SPECIFIC RESULT FROM THE SERVICES, INCLUDING, WITHOUT LIMITATION, ANY PARTICULAR LEVEL OF SALES, REVENUE, LEADS, RETURN ON AD SPEND ("ROAS"), RETURN ON INVESTMENT ("ROI"), SEARCH ENGINE RANKING, WEBSITE TRAFFIC, CONVERSION RATE, OR ANY OTHER MARKETING OR BUSINESS OUTCOME.`,
+          `Marketing and advertising performance is influenced by numerous factors outside of the Company’s control, including but not limited to: market and economic conditions; competitive activity; the Client’s pricing, product quality, and customer service; changes to Advertising Platform algorithms, policies, and auction dynamics; seasonality; the Client’s responsiveness to leads generated by the Services; and macroeconomic and industry-specific trends. Any performance projections, case studies, or examples of past results provided by the Company are illustrative only and are not a guarantee or warranty of future performance for the Client’s specific business.`,
+        ],
+      },
+      {
+        title: '13.3 Platform Changes and Third-Party Platform Risk',
+        body: [
+          `The Client acknowledges that Advertising Platforms, including Meta and Google, operate independently of the Company and may, at any time and without notice: suspend or terminate Advertising Accounts; reject, disapprove, or remove advertisements; modify targeting, bidding, or delivery algorithms; change advertising policies, pricing structures, or auction dynamics; or otherwise alter the availability or performance of advertising products relied upon in delivering the Services.`,
+          `THE COMPANY IS NOT RESPONSIBLE FOR THE ACTIONS, POLICIES, OR TECHNICAL CHANGES OF ANY ADVERTISING PLATFORM OR OTHER THIRD-PARTY PLATFORM, INCLUDING ANY ACCOUNT SUSPENSION, AD REJECTION, OR ALGORITHM CHANGE, EVEN WHERE SUCH EVENTS MATERIALLY AFFECT CAMPAIGN PERFORMANCE. The Company will use commercially reasonable efforts to comply with the advertising policies of each Advertising Platform on the Client’s behalf and to respond appropriately to platform-initiated account or advertisement issues, but cannot control or guarantee the outcome of any such platform action.`,
+        ],
+      },
+      {
+        title: '13.4 Compliance with Platform Policies',
+        body: [
+          `The Client agrees to cooperate with the Company in complying with the advertising policies of applicable Advertising Platforms, including by providing accurate business information, honoring applicable industry-specific advertising restrictions, and refraining from directing the Company to advertise products, services, or claims that violate platform policies or applicable law. The Company reserves the right to decline to run advertising that it reasonably believes would violate an Advertising Platform’s policies or applicable law, including FTC advertising and endorsement guidelines.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '14. Suspension of Services',
+    body: [
+      `The Company may suspend performance of the Services, including pausing active advertising campaigns, in the following circumstances: (a) the Client’s failure to pay amounts due under Section 12; (b) the Client’s failure to fund or maintain sufficient Advertising Spend; (c) the Client’s request to advertise content that the Company reasonably believes violates applicable law or an Advertising Platform’s policies; (d) suspension or restriction of the Client’s Advertising Account by an Advertising Platform for reasons outside the Company’s control; or (e) the Client’s failure to provide access, approvals, or information reasonably necessary for the Company to perform the Services. The Company will provide notice of any suspension where reasonably practicable and will resume Services promptly upon resolution of the underlying issue.`,
+    ],
+  },
+  {
+    title: '15. Subcontractors and AI-Assisted Tools',
+    body: [
+      `The Company may engage subcontractors, freelancers, or third-party agencies to assist in the performance of the Services, provided that the Company remains responsible for the quality of Services delivered to the Client and requires subcontractors to maintain confidentiality obligations consistent with Section 10.`,
+      `The Company may also use artificial intelligence-assisted tools and technologies in connection with content production, campaign optimization, research, reporting, and general workflow efficiency. All such tools are used under human oversight, and the Company remains responsible for reviewing and approving material outputs before they are delivered to the Client or published in a live advertising campaign. The use of AI-assisted tools does not relieve the Company of its obligation to perform the Services in a professional and workmanlike manner as described in Section 6.`,
+    ],
+  },
+  {
+    title: '16. Term and Termination',
+    subsections: [
+      {
+        title: '16.1 Term',
+        body: [
+          `The term of a given engagement will be set forth in the applicable Service Agreement. Absent a specified term, engagements are provided on a month-to-month basis, terminable by either party as described below.`,
+        ],
+      },
+      {
+        title: '16.2 Termination for Convenience',
+        body: [
+          `Unless a Service Agreement specifies a different notice period or minimum term, either party may terminate an ongoing engagement for convenience upon thirty (30) days’ prior written notice to the other party.`,
+        ],
+      },
+      {
+        title: '16.3 Termination for Cause',
+        body: [
+          `Either party may terminate an engagement immediately upon written notice if the other party: (a) materially breaches these Terms or the applicable Service Agreement and fails to cure such breach within fifteen (15) days after receiving written notice describing the breach; (b) becomes insolvent, makes an assignment for the benefit of creditors, or becomes subject to bankruptcy proceedings; or (c) engages in conduct that is illegal or that exposes the other party to material legal or reputational risk.`,
+        ],
+      },
+      {
+        title: '16.4 Effect of Termination',
+        body: [
+          `Upon termination of an engagement for any reason: (a) the Client remains responsible for payment of all fees earned and Advertising Spend incurred through the effective date of termination; (b) the Company will, subject to full payment, cooperate in transferring or removing its access to Advertising Accounts as described in Section 7; (c) each party will return or destroy the other party’s Confidential Information upon request, except to the extent retention is required by law or standard document retention policies; and (d) the provisions of these Terms that by their nature should survive termination — including Sections 8 (Intellectual Property), 10 (Confidential Information), 12 (Payments), 13 (Performance Disclaimers), 17 (Limitation of Liability), 18 (Disclaimer of Warranties), 19 (Indemnification), and 21 (Dispute Resolution) — will survive termination.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '17. Limitation of Liability',
+    body: [
+      `TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL THE COMPANY, ITS MEMBERS, MANAGERS, EMPLOYEES, OR SUBCONTRACTORS BE LIABLE TO THE CLIENT FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, EXEMPLARY, OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS, LOST REVENUE, LOST BUSINESS OPPORTUNITY, OR LOSS OF DATA, ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICES, REGARDLESS OF THE THEORY OF LIABILITY AND EVEN IF THE COMPANY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.`,
+      `TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE COMPANY’S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THESE TERMS OR THE SERVICES, WHETHER IN CONTRACT, TORT, OR OTHERWISE, WILL NOT EXCEED THE TOTAL FEES (EXCLUDING ADVERTISING SPEND REMITTED TO THIRD-PARTY ADVERTISING PLATFORMS) PAID BY THE CLIENT TO THE COMPANY DURING THE THREE (3) MONTHS IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO THE CLAIM.`,
+      `The limitations in this Section apply notwithstanding the failure of essential purpose of any limited remedy and reflect an informed, voluntary allocation of risk between the parties, in consideration of which the Company’s fees have been set. Nothing in this Section is intended to limit liability in circumstances where such limitation is prohibited by applicable law.`,
+    ],
+  },
+  {
+    title: '18. Disclaimer of Warranties',
+    body: [
+      `EXCEPT AS EXPRESSLY SET FORTH IN AN APPLICABLE SERVICE AGREEMENT, THE SERVICES, THE SITE, AND ANY DELIVERABLES ARE PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. THE COMPANY DOES NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE, OR THAT ANY ADVERTISING PLATFORM WILL CONTINUE TO OFFER OR SUPPORT THE FUNCTIONALITY RELIED UPON IN DELIVERING THE SERVICES.`,
+    ],
+  },
+  {
+    title: '19. Indemnification',
+    body: [
+      `The Client agrees to defend, indemnify, and hold harmless the Company, its members, managers, employees, and subcontractors from and against any third-party claims, damages, liabilities, costs, and expenses (including reasonable attorneys’ fees) arising out of or relating to: (a) the Client’s breach of these Terms or an applicable Service Agreement; (b) content, claims, products, or services provided by the Client for use in advertising that give rise to claims of false advertising, intellectual property infringement, defamation, or violation of applicable law; (c) the Client’s violation of any applicable law or third-party right; or (d) the Client’s use of the Deliverables outside the scope authorized under these Terms.`,
+      `The Company agrees to defend, indemnify, and hold harmless the Client from and against any third-party claims, damages, liabilities, costs, and expenses (including reasonable attorneys’ fees) arising out of the Company’s gross negligence or willful misconduct in performing the Services, or the Company’s unauthorized use of the Client IP in a manner that directly infringes a third party’s intellectual property rights, subject to the limitations set forth in Section 17.`,
+    ],
+  },
+  {
+    title: '20. Force Majeure',
+    body: [
+      `Neither party will be liable for any failure or delay in performance under these Terms resulting from causes beyond that party’s reasonable control, including acts of God, natural disaster, war, terrorism, riot, labor dispute, governmental action, internet or telecommunications failure, or the unavailability, outage, or material policy change of an Advertising Platform or other third-party service on which performance depends. The affected party will use commercially reasonable efforts to mitigate the impact of such event and to resume performance promptly once the event concludes.`,
+    ],
+  },
+  {
+    title: '21. Dispute Resolution; Arbitration; Venue; Governing Law',
+    subsections: [
+      {
+        title: '21.1 Informal Resolution',
+        body: [
+          `In the event of any dispute arising out of or relating to these Terms or the Services, the parties agree to first attempt in good faith to resolve the dispute through direct negotiation between authorized representatives for a period of not less than thirty (30) days before initiating arbitration or litigation.`,
+        ],
+      },
+      {
+        title: '21.2 Binding Arbitration',
+        body: [
+          `Except for claims seeking injunctive relief, claims for nonpayment of fees, or claims within the jurisdiction of small claims court, any dispute, claim, or controversy arising out of or relating to these Terms, the Services, or the relationship between the parties will be resolved by binding arbitration administered in accordance with the commercial arbitration rules then in effect, conducted by a single arbitrator, with the arbitration to take place in a location within the State of Iowa, or, if the parties agree, remotely via videoconference. The arbitrator’s decision will be final and binding, and judgment on the award may be entered in any court of competent jurisdiction. Each party will bear its own costs of arbitration, except that the arbitrator may award reasonable attorneys’ fees and costs to the prevailing party to the extent permitted by applicable law and the applicable Service Agreement.`,
+        ],
+      },
+      {
+        title: '21.3 Venue',
+        body: [
+          `To the extent any dispute is not subject to arbitration under Section 21.2, or to the extent judicial proceedings are necessary to compel arbitration or enforce an arbitration award, the parties agree that the state and federal courts located in Iowa will have exclusive jurisdiction over such proceedings, and each party consents to personal jurisdiction and venue in such courts and waives any objection based on inconvenient forum.`,
+        ],
+      },
+      {
+        title: '21.4 Governing Law',
+        body: [
+          `These Terms and any dispute arising out of or relating to these Terms or the Services will be governed by and construed in accordance with the laws of the State of Iowa, without regard to its conflict of laws principles, and without regard to the United Nations Convention on Contracts for the International Sale of Goods, which the parties expressly exclude.`,
+        ],
+      },
+      {
+        title: '21.5 Class Action Waiver',
+        body: [
+          `To the extent permitted by applicable law, each party agrees that any arbitration or proceeding will be conducted only on an individual basis and not as a class, collective, or representative action, and the arbitrator will not have authority to combine more than one person’s claims into a single proceeding absent the express written consent of all parties.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '22. Electronic Signatures and Electronic Communications',
+    body: [
+      `The parties agree that Service Agreements, proposals, and other documents relating to the Services may be executed electronically, including through electronic signature platforms, and that such electronic signatures and records will have the same legal effect as handwritten signatures and physical records, to the fullest extent permitted under the U.S. Electronic Signatures in Global and National Commerce Act ("E-SIGN Act") and the Iowa Uniform Electronic Transactions Act. The parties further consent to receive communications relating to the Services electronically, including by email.`,
+    ],
+  },
+  {
+    title: '23. Assignment',
+    body: [
+      `The Client may not assign or transfer these Terms or any Service Agreement, whether by operation of law or otherwise, without the prior written consent of the Company, which will not be unreasonably withheld. The Company may assign these Terms without the Client’s consent in connection with a merger, acquisition, corporate reorganization, or sale of all or substantially all of its assets. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties and their respective permitted successors and assigns.`,
+    ],
+  },
+  {
+    title: '24. Entire Agreement',
+    body: [
+      `These Terms, together with the Privacy Policy and any applicable Service Agreement, constitute the entire agreement between the parties with respect to the subject matter herein, and supersede all prior or contemporaneous understandings, agreements, negotiations, representations, and warranties, whether written or oral, relating to such subject matter. In the event of a direct conflict between these Terms and an executed Service Agreement, the Service Agreement will control solely with respect to the specific matters it expressly addresses.`,
+    ],
+  },
+  {
+    title: '25. Severability',
+    body: [
+      `If any provision of these Terms is held by a court or arbitrator of competent jurisdiction to be invalid, illegal, or unenforceable, that provision will be modified to the minimum extent necessary to make it enforceable, or, if it cannot be so modified, severed from these Terms, and the remaining provisions will continue in full force and effect.`,
+    ],
+  },
+  {
+    title: '26. Waiver',
+    body: [
+      `No waiver of any provision of these Terms will be effective unless made in writing and signed by the party against whom the waiver is sought to be enforced. The failure of either party to enforce any right or provision of these Terms will not constitute a waiver of that right or provision or of any other right or provision, and no single or partial exercise of any right will preclude any other or further exercise of that right or any other right.`,
+    ],
+  },
+  {
+    title: '27. Survival',
+    body: [
+      `The provisions of these Terms that by their nature are intended to survive termination or expiration of an engagement — including, without limitation, provisions relating to Intellectual Property, Confidential Information, Payments, Performance Disclaimers, Limitation of Liability, Disclaimer of Warranties, Indemnification, and Dispute Resolution — will survive any termination or expiration of these Terms or the applicable Service Agreement.`,
+    ],
+  },
+  {
+    title: '28. Changes to These Terms',
+    body: [
+      `The Company may revise these Terms from time to time to reflect changes in its Services, business practices, or applicable law. The "Effective Date" indicated at the top of these Terms reflects the date of the most recent revision. Material changes affecting an active engagement will be communicated to the Client by email or through the Client’s account portal, and continued use of the Services following such notice constitutes acceptance of the revised Terms. If the Client does not agree to a material revision, the Client may terminate the engagement in accordance with Section 16.`,
+    ],
+  },
+  {
+    title: '29. Miscellaneous Provisions',
+    subsections: [
+      {
+        title: '29.1 Notices',
+        body: [
+          `Except as otherwise specified in these Terms, all notices required or permitted under these Terms will be delivered in writing by email to the address on file for the applicable party, and will be deemed given upon confirmation of transmission, provided that notices of material breach or termination will also be sent by a traceable method, such as certified mail or a recognized courier service, to the recipient’s last known business address.`,
+        ],
+      },
+      {
+        title: '29.2 No Third-Party Beneficiaries',
+        body: [
+          `These Terms are intended solely for the benefit of the Company and the Client, and do not confer any rights or remedies upon any third party, including any customer, lead, or end user of the Client’s business.`,
+        ],
+      },
+      {
+        title: '29.3 Relationship to Advertising Platform Terms',
+        body: [
+          `The Client acknowledges that its Advertising Accounts remain subject to the separate terms of service, advertising policies, and community standards of the applicable Advertising Platform, and that nothing in these Terms modifies or supersedes those third-party terms. In the event of any conflict between these Terms and an Advertising Platform’s terms with respect to the operation of the Client’s own Advertising Account, the Advertising Platform’s terms will govern the Client’s direct relationship with that platform.`,
+        ],
+      },
+      {
+        title: '29.4 Headings and Interpretation',
+        body: [
+          `Section headings in these Terms are for convenience only and do not affect interpretation. Unless the context requires otherwise, references to "including" mean "including without limitation," and references to Sections refer to sections of these Terms.`,
+        ],
+      },
+    ],
+  },
+  {
+    title: '30. Non-Solicitation',
+    body: [
+      `During the term of an engagement and for a period of twelve (12) months following its termination, the Client agrees not to directly solicit for hire, or engage as an independent contractor, any employee or subcontractor of the Company who was materially involved in the performance of the Services for the Client, without the Company’s prior written consent. This restriction does not apply to individuals who respond to a general, non-targeted public job posting or recruitment effort not specifically directed at Company personnel. The parties agree that this restriction is reasonable in scope and duration given the Company’s investment in training and developing its personnel, and that a breach of this Section would cause the Company harm not fully compensable by monetary damages alone, entitling the Company to seek injunctive relief in addition to any other available remedy.`,
+    ],
+  },
+  {
+    title: '31. Insurance',
+    body: [
+      `The Company will maintain commercially reasonable levels of general liability and, where applicable, professional liability (errors and omissions) insurance appropriate for a marketing agency of its size, and will provide evidence of such coverage to the Client upon reasonable written request. Maintenance of insurance does not expand the Company’s liability beyond the limitations set forth in Section 17, and any insurance proceeds are supplemental to, and not a substitute for, the liability framework established in these Terms.`,
+    ],
+  },
+  {
+    title: '32. Publicity; No Fiduciary Duty',
+    body: [
+      `Except as restricted under Section 8.5 (Portfolio and Marketing Use) or an applicable written non-disclosure agreement, either party may identify the other as a business relationship in general marketing materials, such as client or vendor lists, without disclosing Confidential Information. Neither party may use the other party’s name, logo, or trademark in a manner suggesting endorsement of a third-party product or service without prior written consent.`,
+      `The relationship between the Company and the Client is a contractual, arm’s-length business relationship. Nothing in these Terms creates a fiduciary duty, trust relationship, or other special duty of loyalty on the part of either party toward the other, beyond the express contractual obligations set forth in these Terms and any applicable Service Agreement.`,
+    ],
+  },
+  {
+    title: '33. Contact Information',
+    body: [
+      `Questions regarding these Terms should be directed to:`,
+    ],
+    contact: {
+      lines: [
+        'Axis Marketing Agency, LLC',
+        'Email: direccion@axismkt.com',
+      ],
+    },
+  },
+];
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+---
+
+<Layout>
+  <Navbar />
+  
+  <div class="legal-page">
+    <div class="legal-container">
+      <header class="legal-header">
+        <p class="legal-eyebrow">Legal Document</p>
+        <h1 class="legal-title">Terms of Service</h1>
+        <p class="legal-subtitle">
+          Axis Marketing Agency, LLC — Effective Date: June 30, 2026
+        </p>
+      </header>
+
+      <nav class="legal-toc" aria-label="Table of contents">
+        <p class="legal-toc-title">Contents</p>
+        <ol class="legal-toc-list">
+          {sections.map((s) => (
+            <li class="legal-toc-item">
+              <a href={`#${slugify(s.title)}`} class="legal-toc-link">
+                {s.title}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
+      <article>
+        {sections.map((section) => (
+          <section id={slugify(section.title)} class="legal-section">
+            <h2 class="legal-section-title">{section.title}</h2>
+            
+            {section.body && section.body.map((text) => (
+              <p class="legal-paragraph">{text}</p>
+            ))}
+
+            {section.subsections && section.subsections.map((sub) => (
+              <div class="legal-subsection">
+                <h3 class="legal-subsection-title">{sub.title}</h3>
+                {sub.body.map((text) => (
+                  <p class="legal-paragraph">{text}</p>
+                ))}
+              </div>
+            ))}
+
+            {section.contact && (
+              <address class="legal-contact-block">
+                {section.contact.lines.map((line) => (
+                  <div>{line}</div>
+                ))}
+              </address>
+            )}
+          </section>
+        ))}
+      </article>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-page {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 80px 20px 120px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .legal-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .legal-header {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 20px;
+  }
+  .legal-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #666666;
+    margin: 0 0 8px;
+  }
+  .legal-title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 8px;
+    font-weight: 800;
+    color: #000000;
+  }
+  .legal-subtitle {
+    font-size: 13px;
+    color: #555555;
+    margin: 0;
+  }
+  .legal-toc {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #000000;
+    background-color: #fafafa;
+  }
+  .legal-toc-title {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 0 12px;
+  }
+  .legal-toc-list {
+    columns: 2;
+    column-gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .legal-toc-item {
+    break-inside: avoid;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+  .legal-toc-link {
+    color: #000000;
+    text-decoration: underline;
+  }
+  .legal-toc-link:hover {
+    text-decoration: none;
+  }
+  .legal-section {
+    margin-bottom: 40px;
+    scroll-margin-top: 40px;
+  }
+  .legal-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .legal-subsection {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 1px solid #e0e0e0;
+  }
+  .legal-subsection-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 8px;
+  }
+  .legal-paragraph {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #222222;
+    margin-bottom: 14px;
+    text-align: justify;
+  }
+  .legal-contact-block {
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000000;
+    margin-top: 12px;
+    font-weight: 500;
+  }
+</style>

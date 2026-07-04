@@ -1,0 +1,110 @@
+---
+const { 
+  primaryText = 'Book a Strategy Call', 
+  secondaryText = 'Learn More' 
+} = Astro.props;
+---
+
+<section 
+  class="relative bg-[url('../images/cta.jpeg')] bg-cover bg-center text-zinc-950 py-16 px-4 overflow-hidden min-h-[280px] flex items-center w-full"
+>
+  <div class="absolute inset-0 bg-zinc-950/5 backdrop-blur-[1px] z-0 pointer-events-none"></div>
+  
+  <div class="absolute inset-0 z-0 pointer-events-none opacity-40">
+    <svg class="w-full h-full" viewBox="0 0 1440 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M500 -100 C 650 200, 1000 150, 1500 500" stroke="#d0dcd0" stroke-width="1.5"/>
+      <path d="M400 600 C 700 300, 1100 450, 1450 -50" stroke="#d0dcd0" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+    
+    <div class="lg:col-span-5 flex flex-col space-y-6 items-start">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 leading-[1.2] max-w-md">
+        Ready to scale your business with a system that works?
+      </h2>
+      
+      <p class="text-zinc-600 text-sm md:text-base leading-relaxed max-w-sm">
+        Let's build your custom acquisition system and start driving more leads and sales.
+      </p>
+
+      <div class="flex gap-3 mt-2">
+        <a
+          href="../contact"
+          class="inline-flex items-center gap-3 bg-zinc-900 hover:bg-zinc-800 text-white text-xs font-bold px-6 py-4 rounded-xl border border-zinc-900 transition-colors shadow-sm"
+        >
+          {primaryText}
+        </a>
+
+         <!--<a
+          href="#learn"
+          class="inline-flex items-center gap-3 bg-[#0A6AE8] hover:bg-[#0852b5] text-white text-xs font-bold px-6 py-4 rounded-xl border border-[#0A6AE8] transition-colors shadow-[0_8px_24px_rgba(10,106,232,0.2)]"
+        >
+          {secondaryText}
+        </a> -->
+      </div>
+    </div>
+
+    <div class="lg:col-span-7 flex items-center justify-center relative min-h-[300px] w-full mt-10 lg:mt-0">
+      
+      <div class="absolute left-2 top-1/4 xl:left-8 w-14 h-14 rounded-full bg-[#e2ebd4] border border-[#d2dfbe] flex items-center justify-center shadow-md z-20 animate-bounce [animation-duration:4s]">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-zinc-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-zinc-100 max-w-[540px] w-full mx-auto relative z-10">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-5">
+          
+          <div class="w-20 h-20 rounded-full overflow-hidden flex-shrink-0 bg-zinc-100 border-2 border-zinc-200 shadow-sm">
+  <img 
+    src="../images/testimonial.jpeg" 
+    alt="Testimonial" 
+    class="w-full h-full object-cover"
+  />
+</div>
+          
+          <div class="flex-1 flex flex-col items-center sm:items-start">
+            <div class="flex gap-1 text-amber-400 mb-3">
+              {[...Array(5)].map(() => (
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.4 8.168L12 18.896l-7.334 3.87 1.4-8.168L.132 9.21l8.2-1.192L12 .587z"/>
+                </svg>
+              ))}
+            </div>
+            
+            <p class="text-zinc-800 text-sm md:text-base font-medium leading-relaxed text-center sm:text-left italic text-pretty">
+              "Working with them has been one of the best decisions for my business. Their client acquisition system has significantly increased our flow of customers and generated a large number of bookings for our food truck. I’m extremely happy with the results and highly recommend their services."
+            </p>
+            
+            <!-- <div class="mt-4 flex flex-col items-center sm:items-start space-y-0.5">
+              <span class="text-zinc-950 font-bold text-sm tracking-tight">
+                Sarah Jenkins
+              </span>
+              <span class="text-zinc-400 text-xs font-semibold">
+                CMO at TechScale
+              </span>
+            </div>-->
+          </div>
+
+        </div>
+      </div>
+
+      <div class="absolute right-4 top-4 xl:right-16 w-10 h-10 rounded-full bg-[#e2ebd4] border border-[#d2dfbe] flex items-center justify-center shadow-sm z-20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+      </div>
+
+      <div class="absolute right-6 bottom-4 xl:right-20 w-10 h-10 rounded-full bg-[#e2ebd4] border border-[#d2dfbe] flex items-center justify-center shadow-sm z-20">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-zinc-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</section>
