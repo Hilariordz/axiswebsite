@@ -22,6 +22,7 @@
           </p>
           
           <form action="https://formspree.io/f/xeebvgka" method="POST" class="space-y-4">
+            <input type="hidden" name="_next" value="/thanks" />
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               <div class="relative">
@@ -166,3 +167,11 @@
     </div>
   </div>
 </section>
+
+<script>
+  const nextInput = document.querySelector('input[name="_next"]');
+
+  if (nextInput) {
+    nextInput.value = new URL('/thanks', window.location.origin).toString();
+  }
+</script>
