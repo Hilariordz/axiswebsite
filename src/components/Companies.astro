@@ -42,8 +42,7 @@ const doubleLogos = [...logos, ...logos];
   <div class="relative w-full overflow-hidden mask-fade">
     <div class="flex w-max gap-12 md:gap-16 items-center animate-marquee hover:[animation-play-state:paused] py-4 cursor-pointer">
       {doubleLogos.map((logo) => (
-        <!-- Cambiado: min-w de [180px]/[220px] a [120px]/[150px] para que quepan más en pantalla -->
-        <div class="flex items-center justify-center min-w-[120px] md:min-w-[150px] transition-all duration-300 hover:scale-105">
+  <div class="flex items-center justify-center min-w-[120px] md:min-w-[150px] transition-all duration-300 hover:scale-105">
     <img
       src={logo.src}
       alt={logo.alt}
@@ -51,7 +50,7 @@ const doubleLogos = [...logos, ...logos];
       loading="lazy"
     />
   </div>
-      ))}
+))}
     </div>
   </div>
 
