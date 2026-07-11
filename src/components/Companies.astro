@@ -44,13 +44,13 @@ const doubleLogos = [...logos, ...logos];
       {doubleLogos.map((logo) => (
         <!-- Cambiado: min-w de [180px]/[220px] a [120px]/[150px] para que quepan más en pantalla -->
         <div class="flex items-center justify-center min-w-[120px] md:min-w-[150px] transition-all duration-300 hover:scale-105">
-          <img
-            src={logo.src}
-            alt={logo.alt}
-            class="h-28 md:h-36 w-auto object-contain opacity-95 hover:opacity-100 transition-all duration-300" 
-            loading="lazy"
-          />
-        </div>
+    <img
+      src={logo.src}
+      alt={logo.alt}
+      class="h-28 md:h-36 w-auto object-contain opacity-95 hover:opacity-100 transition-all duration-300" 
+      loading="lazy"
+    />
+  </div>
       ))}
     </div>
   </div>
