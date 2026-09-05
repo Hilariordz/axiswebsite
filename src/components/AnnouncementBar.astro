@@ -1,0 +1,121 @@
+---
+// AnnouncementBar: banner flotante pegado debajo del navbar
+---
+
+<div
+  id="announcement-bar"
+  class="w-full fixed top-20 left-0 z-40 px-4"
+>
+  <div
+    class="relative flex items-center w-full max-w-5xl mx-auto rounded-b-2xl overflow-hidden"
+    style="
+      background: url('/images/backgroundmodal.png') center / 100% 100% no-repeat;
+      min-height: 80px;
+      box-shadow: 0 8px 32px rgba(41,82,227,0.5);
+    "
+  >
+    <!-- Texto (zona izquierda, respeta los arcos de la derecha) -->
+    <div class="pl-8 z-10 py-3" style="width: 55%;">
+      <p class="text-white font-black uppercase leading-tight"
+         style="font-size: clamp(0.8rem, 1.8vw, 1.15rem); text-shadow: 0 1px 10px rgba(0,0,0,0.3); letter-spacing: 0.01em;">
+        YOUR COMPETITORS ARE ALREADY ADVERTISING.
+      </p>
+      <p class="text-white/80 font-medium leading-tight mt-1"
+         style="font-size: clamp(0.6rem, 1.1vw, 0.8rem);">
+        Find out how we can help you get more customers
+      </p>
+    </div>
+
+    <!-- Separador vertical -->
+    <div class="self-stretch w-px bg-white/20 mx-2 my-3 shrink-0"></div>
+
+    <!-- Contador -->
+    <div class="z-10 flex flex-col items-center justify-center px-4 shrink-0">
+      <span id="bar-timer"
+        class="text-white font-black tabular-nums leading-none"
+        style="font-size: 1.75rem; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+        10:00
+      </span>
+      <span class="text-white/60 font-bold uppercase tracking-widest mt-0.5" style="font-size: 0.55rem;">
+        min
+      </span>
+    </div>
+
+    <!-- Separador vertical -->
+    <div class="self-stretch w-px bg-white/20 mx-2 my-3 shrink-0"></div>
+
+    <!-- Botón Quote Now -->
+    <button
+      id="bar-cta"
+      class="z-10 shrink-0 ml-2 bg-white text-[#2952e3] font-black uppercase tracking-wide rounded-lg hover:bg-blue-50 active:scale-95 transition-all whitespace-nowrap shadow-lg cursor-pointer border-0"
+      style="font-size: clamp(0.65rem, 1.2vw, 0.85rem); padding: 0.6rem 1.25rem; margin-right: 22%;"
+    >
+      Quote Now →
+    </button>
+
+  </div>
+</div>
+
+<script>
+  // --- Temporizador (persiste entre páginas en la misma sesión) ---
+  const DURATION_MS = 10 * 60 * 1000;
+  const TIMER_KEY = 'axis_bar_deadline';
+
+  let deadline: number;
+  const stored = sessionStorage.getItem(TIMER_KEY);
+  const storedNum = stored ? parseInt(stored, 10) : 0;
+
+  // Si no hay deadline guardado o ya venció, crear uno nuevo
+  if (!storedNum || storedNum <= Date.now()) {
+    deadline = Date.now() + DURATION_MS;
+    sessionStorage.setItem(TIMER_KEY, String(deadline));
+  } else {
+    deadline = storedNum;
+  }
+
+  const timerEl = document.getElementById('bar-timer');
+
+  function pad(n: number): string {
+    return String(n).padStart(2, '0');
+  }
+
+  function tick() {
+    const remaining = Math.max(0, deadline - Date.now());
+    const totalSeconds = Math.floor(remaining / 1000);
+    const m = Math.floor(totalSeconds / 60);
+    const s = totalSeconds % 60;
+    if (timerEl) timerEl.textContent = `${pad(m)}:${pad(s)}`;
+    if (remaining > 0) setTimeout(tick, 1000);
+  }
+
+  tick();
+
+  // --- Ocultar banner si ya se envió el formulario ---
+  const bar = document.getElementById('announcement-bar');
+  const HIDDEN_KEY = 'axis_bar_submitted';
+
+  if (sessionStorage.getItem(HIDDEN_KEY) === '1') {
+    bar?.remove();
+  }
+
+  // --- Botón: scroll suave con offset navbar + banner ---
+  const ctaBtn = document.getElementById('bar-cta');
+  ctaBtn?.addEventListener('click', () => {
+    const target = document.getElementById('contact-form');
+    if (target) {
+      const offset = 80 + 80 + 12;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    } else {
+      window.location.href = '/contact#contact-form';
+    }
+  });
+
+  // --- Detectar envío del formulario ---
+  const form = document.querySelector('form[action*="formspree"]') as HTMLFormElement | null;
+  form?.addEventListener('submit', () => {
+    sessionStorage.setItem(HIDDEN_KEY, '1');
+    bar?.classList.add('opacity-0', 'pointer-events-none');
+    setTimeout(() => bar?.remove(), 400);
+  });
+</script>

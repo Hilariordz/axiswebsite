@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
 import Hero from '../components/Hero.astro';
 import SystemSection from '../components/SystemSection.astro';
 import CampaignsSection from '../components/CampaignsSection.astro';
@@ -12,9 +13,8 @@ import Footer from '../components/Footer.astro';
 
 <Layout>
 	<Navbar/>
-	<section class="bg-white">
-		<Hero/>
-	</section>
+	<AnnouncementBar/>
+	<Hero/>
 	<SystemSection/>
 	<WhyChooseUs/>
 	<CampaignsSection/>
