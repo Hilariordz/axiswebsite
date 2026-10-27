@@ -88,33 +88,35 @@
         >
       </div>
 
-      <div class="flex flex-col gap-3.5">
-        <h4 class="text-white font-medium text-base mb-1">Solutions</h4>
-        <a
-          href="#"
-          class="hover:text-white transition-colors text-sm text-gray-400"
-          >Meta Ads Campaigns</a
+      <div class="flex min-w-0 flex-col gap-3.5">
+        <h4 class="text-white font-medium text-base mb-1">Newsletter</h4>
+        <p class="text-sm leading-relaxed text-gray-400">
+          Get practical acquisition strategies and updates from Axis directly in your inbox.
+        </p>
+        <form
+          action="https://formspree.io/f/xeebvgka"
+          method="POST"
+          class="flex w-full flex-col gap-3 sm:flex-row"
         >
-        <a
-          href="#"
-          class="hover:text-white transition-colors text-sm text-gray-400"
-          >Landing Pages</a
-        >
-        <a
-          href="#"
-          class="hover:text-white transition-colors text-sm text-gray-400"
-          >Lead Generation</a
-        >
-        <a
-          href="#"
-          class="hover:text-white transition-colors text-sm text-gray-400"
-          >Sales Funnel</a
-        >
-        <a
-          href="#"
-          class="hover:text-white transition-colors text-sm text-gray-400"
-          >Performance Optimization</a
-        >
+          <input type="hidden" name="_subject" value="New Axis newsletter subscriber" />
+          <input type="hidden" name="_next" value="/thanks" />
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input
+            id="newsletter-email"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="Your email address"
+            class="min-w-0 flex-1 rounded-xl border border-gray-700 bg-[#071523] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-gray-500 focus:border-blue-500"
+          />
+          <button
+            type="submit"
+            class="w-full shrink-0 rounded-full border border-blue-400/70 bg-transparent px-5 py-3 text-sm font-medium text-blue-300 transition-colors hover:border-blue-300 hover:bg-blue-400/10 hover:text-white sm:w-auto"
+          >
+            Join the list
+          </button>
+        </form>
       </div>
 
       <div class="flex flex-col gap-4">
