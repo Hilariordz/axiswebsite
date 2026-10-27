@@ -1,63 +1,50 @@
----
-// AnnouncementBar: banner flotante pegado debajo del navbar
----
-
 <div
   id="announcement-bar"
   class="w-full fixed top-20 left-0 z-40 px-4"
 >
   <div
-    class="relative flex items-center w-full max-w-5xl mx-auto rounded-b-2xl overflow-hidden"
+    class="relative flex items-stretch w-full max-w-5xl mx-auto rounded-b-2xl overflow-hidden"
     style="
-      background: url('/images/backgroundmodal.png') center / 100% 100% no-repeat;
-      min-height: 80px;
+      background: linear-gradient(90deg, #4f6ef0 0%, #2952e3 100%);
+      min-height: 88px;
       box-shadow: 0 8px 32px rgba(41,82,227,0.5);
     "
   >
-    <!-- Texto (zona izquierda, respeta los arcos de la derecha) -->
-    <div class="pl-8 z-10 py-3" style="width: 55%;">
+    <div class="flex flex-col justify-center flex-1 min-w-0 pl-5 md:pl-8 pr-3 py-3 z-10">
       <p class="text-white font-black uppercase leading-tight"
-         style="font-size: clamp(0.8rem, 1.8vw, 1.15rem); text-shadow: 0 1px 10px rgba(0,0,0,0.3); letter-spacing: 0.01em;">
-        YOUR COMPETITORS ARE ALREADY ADVERTISING.
+         style="font-size: clamp(0.8rem, 1.6vw, 1.05rem); text-shadow: 0 1px 10px rgba(0,0,0,0.3); letter-spacing: 0.01em;">
+        Your competitors are already advertising.
       </p>
-      <p class="text-white/80 font-medium leading-tight mt-1"
-         style="font-size: clamp(0.6rem, 1.1vw, 0.8rem);">
+      <p class="text-white/85 font-medium leading-snug mt-1"
+         style="font-size: clamp(0.65rem, 1.1vw, 0.85rem);">
         Find out how we can help you get more customers
       </p>
     </div>
 
-    <!-- Separador vertical -->
-    <div class="self-stretch w-px bg-white/20 mx-2 my-3 shrink-0"></div>
-
-    <!-- Contador -->
-    <div class="z-10 flex flex-col items-center justify-center px-4 shrink-0">
+    <div class="z-10 flex flex-col items-center justify-center px-4 border-l border-white/20 shrink-0">
       <span id="bar-timer"
         class="text-white font-black tabular-nums leading-none"
-        style="font-size: 1.75rem; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+        style="font-size: 1.6rem; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">
         10:00
       </span>
-      <span class="text-white/60 font-bold uppercase tracking-widest mt-0.5" style="font-size: 0.55rem;">
+      <span class="text-white/60 font-bold uppercase tracking-widest mt-1" style="font-size: 0.55rem;">
         min
       </span>
     </div>
 
-    <!-- Separador vertical -->
-    <div class="self-stretch w-px bg-white/20 mx-2 my-3 shrink-0"></div>
-
-    <!-- Botón Quote Now -->
-    <button
-      id="bar-cta"
-      class="z-10 shrink-0 ml-2 bg-white text-[#2952e3] font-black uppercase tracking-wide rounded-lg hover:bg-blue-50 active:scale-95 transition-all whitespace-nowrap shadow-lg cursor-pointer border-0"
-      style="font-size: clamp(0.65rem, 1.2vw, 0.85rem); padding: 0.6rem 1.25rem; margin-right: 22%;"
-    >
-      Quote Now →
-    </button>
-
+    <div class="z-10 flex items-center shrink-0 px-3 md:px-5 border-l border-white/20">
+      <button
+        id="bar-cta"
+        class="bg-white text-[#2952e3] font-black uppercase tracking-wide rounded-lg hover:bg-blue-50 active:scale-95 transition-all whitespace-nowrap shadow-lg cursor-pointer border-0"
+        style="font-size: clamp(0.65rem, 1.2vw, 0.85rem); padding: 0.6rem 1.1rem;"
+      >
+        Quote Now →
+      </button>
+    </div>
   </div>
 </div>
 
 <script>
-  // --- Temporizador (persiste entre páginas en la misma sesión) ---
   const DURATION_MS = 10 * 60 * 1000;
   const TIMER_KEY = 'axis_bar_deadline';
 
@@ -65,7 +52,6 @@
   const stored = sessionStorage.getItem(TIMER_KEY);
   const storedNum = stored ? parseInt(stored, 10) : 0;
 
-  // Si no hay deadline guardado o ya venció, crear uno nuevo
   if (!storedNum || storedNum <= Date.now()) {
     deadline = Date.now() + DURATION_MS;
     sessionStorage.setItem(TIMER_KEY, String(deadline));
@@ -90,7 +76,6 @@
 
   tick();
 
-  // --- Ocultar banner si ya se envió el formulario ---
   const bar = document.getElementById('announcement-bar');
   const HIDDEN_KEY = 'axis_bar_submitted';
 
@@ -98,7 +83,6 @@
     bar?.remove();
   }
 
-  // --- Botón: scroll suave con offset navbar + banner ---
   const ctaBtn = document.getElementById('bar-cta');
   ctaBtn?.addEventListener('click', () => {
     const target = document.getElementById('contact-form');
@@ -111,7 +95,6 @@
     }
   });
 
-  // --- Detectar envío del formulario ---
   const form = document.querySelector('form[action*="formspree"]') as HTMLFormElement | null;
   form?.addEventListener('submit', () => {
     sessionStorage.setItem(HIDDEN_KEY, '1');
